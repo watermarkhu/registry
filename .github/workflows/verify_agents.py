@@ -41,7 +41,7 @@ PLATFORM_MAP = {
 DEFAULT_TIMEOUT = 10  # seconds
 STARTUP_GRACE = 2  # seconds to wait before checking if process is alive
 DEFAULT_SANDBOX_DIR = ".sandbox"
-DEFAULT_AUTH_TIMEOUT = 60  # seconds for ACP handshake (includes npx download time)
+DEFAULT_AUTH_TIMEOUT = 120  # seconds for ACP handshake (includes npx download time)
 
 
 class Result(NamedTuple):
@@ -619,7 +619,7 @@ def main():
         epilog="""
 Examples:
   %(prog)s                          # Verify all agents (basic launch test)
-  %(prog)s -a claude,gemini         # Verify specific agents (comma-separated)
+  %(prog)s -a claude-acp,gemini     # Verify specific agents (comma-separated)
   %(prog)s -t npx                   # Verify only npx distributions
   %(prog)s --clean                  # Clean sandboxes before running
   %(prog)s --clean-all              # Remove all sandboxes and exit
