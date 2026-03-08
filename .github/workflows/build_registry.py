@@ -12,11 +12,11 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from registry_utils import (
-    SKIP_DIRS,
     extract_npm_package_name,
     extract_npm_package_version,
     extract_pypi_package_name,
     normalize_version,
+    should_skip_dir,
 )
 
 try:
@@ -535,7 +535,7 @@ def build_registry(dry_run: bool = False):
         print("  Install with: pip install jsonschema")
 
     for entry_dir in sorted(registry_dir.iterdir()):
-        if not entry_dir.is_dir() or entry_dir.name in SKIP_DIRS:
+        if not entry_dir.is_dir() or should_skip_dir(entry_dir.name):
             continue
 
         agent_json_path = entry_dir / "agent.json"

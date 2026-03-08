@@ -70,7 +70,7 @@ jobs:
           XDG_CONFIG_HOME: ${{ runner.temp }}/xdg-config
         run: |
           AGENTS_INPUT=""
-          SKIP_INPUT="crow-cli"
+          SKIP_INPUT=""
           TABLE_MODE="capabilities"
           CHANGED_ONLY="false"
 
@@ -86,7 +86,7 @@ jobs:
           ARGS=(
             --sandbox-dir .matrix-sandbox
             --output-dir .protocol-matrix
-            --init-timeout 45
+            --init-timeout 120
             --rpc-timeout 5
             --table-mode "$TABLE_MODE"
           )
