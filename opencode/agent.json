@@ -40,6 +40,13 @@
           "acp"
         ]
       },
+      "windows-aarch64": {
+        "archive": "https://github.com/anomalyco/opencode/releases/download/v1.14.22/opencode-windows-arm64.zip",
+        "cmd": "./opencode",
+        "args": [
+          "acp"
+        ]
+      },
       "windows-x86_64": {
         "archive": "https://github.com/anomalyco/opencode/releases/download/v1.14.22/opencode-windows-x64.zip",
         "cmd": "./opencode.exe",
